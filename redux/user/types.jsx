@@ -1,0 +1,3 @@
+export const GET_USERS = "GET_DEVICES";
+export const GET_USERS_ERROR = "GET_USERS_ERROR";
+export const IS_PROCESSING = "IS_PROCESSING";
