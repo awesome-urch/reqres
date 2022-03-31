@@ -4,10 +4,10 @@ Detailed documentation on how to run and publish to both Google Play Store and A
 
 * [Run and Publish to Google Play Store](#run-and-publish-to-google-play-store)
   * [Generating an upload key](#generating-an-upload-key)
-    * [Windows)](#windows)
+    * [Windows](#windows)
     * [MacOS](#macos)
   * [Setting up Gradle variables](#setting-up-gradle-variables)
-  * [Adding signing config to your app's Gradle config](#adding-signing-config-to-your-app's-gradle-config)
+  * [Adding signing config to your app's Gradle config](#adding-signing-config-to-your-apps-gradle-config)
   * [Generating the release AAB](#generating-the-release-aab)
   * [Testing the release build of your app](#testing-the-release-build-of-your-app)
 * [Run and Publish to Apple App Store](#run-and-publish-to-apple-app-store)
@@ -126,7 +126,7 @@ Upgrading to a new version of React Native requires updating the `react-native`,
 
 ## Run and Publish to Apple App Store
 
-This publishing process requires an Apple laptop with XCode already installed.
+This publishing process requires a MacOS with XCode already installed.
 
 ### Enable App Transport Security
 
