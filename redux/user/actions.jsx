@@ -1,7 +1,7 @@
 import instance from "..";
 import * as actionTypes from "./types"
 
-export const getUsers = (options) => {
+export const getUsers = () => {
     return (dispatch, getState) => {
 
       dispatch({
@@ -18,7 +18,7 @@ export const getUsers = (options) => {
         )
         .then((response) => {
 
-          console.log(response);
+          console.log(response.data.data);
 
             dispatch({
                 type: actionTypes.GET_USERS,

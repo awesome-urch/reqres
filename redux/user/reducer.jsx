@@ -23,12 +23,12 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 errorMessage: action.data,
                 isProcessing: false,
             };
-        case actionTypes.CLEAR_ERROR:
-            console.log(action)
-            return {
-                ...state,
-                errorMessage: null,
-            };
+        // case actionTypes.CLEAR_ERROR:
+        //     console.log(action)
+        //     return {
+        //         ...state,
+        //         errorMessage: null,
+        //     };
         
         case actionTypes.IS_PROCESSING:
             console.log(action)
