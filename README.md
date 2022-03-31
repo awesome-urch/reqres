@@ -1,9 +1,6 @@
-
 Detailed documentation on how to run and publish to both Google Play Store and Apple Appstore.
 
 ## Table of Contents
-
-//Generating an upload key
 
 * [Run and Publish to Google Play Store](#run-and-publish-to-google-play-store)
   * [Generating an upload key](#generating-an-upload-key)
@@ -116,4 +113,39 @@ Before uploading the release build to the Play Store, make sure you test it thor
 
 ```
 npx react-native run-android --variant=release
+```
+
+
+Like `npm start`, but also attempts to open your app in the iOS Simulator if you're on a Mac and have it installed.
+
+You should only need to update the global installation of `create-react-native-app` very rarely, ideally never.
+
+Updating the `react-native-scripts` dependency of your app should be as simple as bumping the version number in `package.json` and reinstalling your project's dependencies.
+
+Upgrading to a new version of React Native requires updating the `react-native`, `react`, and `expo` package versions, and setting the correct `sdkVersion` in `app.json`. See the [versioning guide](https://github.com/react-community/create-react-native-app/blob/master/VERSIONS.md) for up-to-date information about package version compatibility.
+
+## Run and Publish to Apple App Store
+
+This publishing process requires an Apple laptop with XCode already installed.
+
+### Enable App Transport Security
+
+Re-enable ATS prior to building the app for production by removing the localhost entry from the NSExceptionDomains dictionary and setting NSAllowsArbitraryLoads to false in the Info.plist file in the ios/ folder. You can also re-enable ATS from within Xcode by opening your target properties under the Info pane and editing the App Transport Security Settings entry.
+
+### Configure release scheme
+
+Building an app for distribution in the App Store requires using the Release scheme in Xcode. Apps built for Release will automatically disable the in-app Developer menu, which will prevent your users from inadvertently accessing the menu in production. It will also bundle the JavaScript locally, so you can put the app on a device and test whilst not connected to the computer.
+
+To configure your app to be built using the Release scheme, go to Product → Scheme → Edit Scheme. Select the Run tab in the sidebar, then set the Build Configuration dropdown to Release.
+
+Runs the [jest](https://github.com/facebook/jest) test runner on your tests.
+
+### Build app for release
+
+You can now build your app for release by tapping ⌘B or selecting Product → Build from the menu bar. Once built for release, you'll be able to distribute the app to beta testers and submit the app to the App Store.
+
+You can also use the React Native CLI to build this app for release by running the following command:
+
+```
+npx react-native run-ios --configuration Release
 ```
